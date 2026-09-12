@@ -19,6 +19,20 @@ const userSchema = new Schema({
         type:Boolean,
         require:true
     },
+    
+
+    role:{
+        type:String,
+        enum:['uder','admin'],
+        default:'user'
+    },
+
+    status:{
+        type:String,
+        enum:['active','deactive'],
+        default:'active' 
+    }
 })
+
 
 module.exports=mongoose.model('user',userSchema)
